@@ -215,6 +215,14 @@ $kategori = mysqli_query($koneksi, "SELECT * FROM category");
             </select>
         </form>
 
+            <form action="" method="get" class="filter-form">
+            <label>Filter Bookmark</label>
+                <select name="favorite" onchange="this.form.submit()" style="border-radius: 5px; width: 150px; height: 25px; margin-bottom: 20px;"   >
+                    <option value="">Semua</option>
+                    <option value="1" <?= @$_GET['favorite']=='1'?'selected':'' ?>>Favorite</option>
+                </select>
+            </form>
+
         <button onclick="window.print()" class="btn btn-add" style="background: #a381e7ff;">Print</button>
         <a href="tambah.php" class="btn btn-add" style="margin-top: 15px; background: #49b859ff;">(+)Tambah</a>
     </div>
